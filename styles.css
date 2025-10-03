@@ -38,6 +38,10 @@
     --transition-normal: 0.3s ease;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     background-color: var(--background-color);
@@ -167,6 +171,9 @@ body {
 .track-list {
     max-height: calc(100vh - var(--header-height) - var(--player-height) - 120px);
     overflow-y: auto;
+    scroll-behavior: smooth;
+    scroll-padding: var(--spacing-md);
+    padding-bottom: var(--spacing-xl);
 }
 
 /* Track Item */
@@ -177,7 +184,9 @@ body {
     padding: var(--spacing-md) var(--spacing-lg);
     border-bottom: 1px solid var(--border-color);
     cursor: pointer;
-    transition: background-color var(--transition-fast);
+    transition: all var(--transition-normal);
+    scroll-margin-top: var(--spacing-md);
+    scroll-margin-bottom: var(--spacing-md);
 }
 
 .track-item:last-child {
@@ -435,10 +444,22 @@ body {
 
 .progress-bar:hover::-webkit-slider-thumb {
     transform: scale(1.2);
+    box-shadow: 0 0 0 4px rgba(29, 185, 84, 0.2);
+}
+
+.progress-bar:active::-webkit-slider-thumb {
+    transform: scale(1.3);
+    box-shadow: 0 0 0 6px rgba(29, 185, 84, 0.3);
 }
 
 .progress-bar:hover::-moz-range-thumb {
     transform: scale(1.2);
+    box-shadow: 0 0 0 4px rgba(29, 185, 84, 0.2);
+}
+
+.progress-bar:active::-moz-range-thumb {
+    transform: scale(1.3);
+    box-shadow: 0 0 0 6px rgba(29, 185, 84, 0.3);
 }
 
 /* Secondary Controls */
@@ -463,6 +484,7 @@ body {
     border-radius: 2px;
     outline: none;
     cursor: pointer;
+    transition: all var(--transition-normal);
 }
 
 .volume-slider::-webkit-slider-thumb {
@@ -473,6 +495,17 @@ body {
     background: var(--primary-color);
     border-radius: 50%;
     cursor: pointer;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.volume-slider:hover::-webkit-slider-thumb {
+    transform: scale(1.2);
+    box-shadow: 0 0 0 4px rgba(29, 185, 84, 0.2);
+}
+
+.volume-slider:active::-webkit-slider-thumb {
+    transform: scale(1.3);
+    box-shadow: 0 0 0 6px rgba(29, 185, 84, 0.3);
 }
 
 .volume-slider::-moz-range-thumb {
@@ -482,6 +515,17 @@ body {
     border: none;
     border-radius: 50%;
     cursor: pointer;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.volume-slider:hover::-moz-range-thumb {
+    transform: scale(1.2);
+    box-shadow: 0 0 0 4px rgba(29, 185, 84, 0.2);
+}
+
+.volume-slider:active::-moz-range-thumb {
+    transform: scale(1.3);
+    box-shadow: 0 0 0 6px rgba(29, 185, 84, 0.3);
 }
 
 /* ===========================

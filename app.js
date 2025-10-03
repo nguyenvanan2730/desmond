@@ -323,6 +323,13 @@ class MusicPlayer {
                 if (this.isPlaying) {
                     activeTrack.classList.add('playing');
                 }
+
+                // Scroll active track into view smoothly
+                activeTrack.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'nearest',
+                    inline: 'nearest'
+                });
             }
         }
     }
