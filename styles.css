@@ -563,7 +563,7 @@ body {
 @media (max-width: 767px) {
     :root {
         --header-height: 60px;
-        --player-height: 240px;
+        --player-height: 180px;
     }
 
     .vision-section {
@@ -581,7 +581,7 @@ body {
 
     .main-content {
         padding: var(--spacing-sm);
-        margin-bottom: 280px;
+        margin-bottom: 200px;
     }
 
     .header-content {
@@ -622,41 +622,55 @@ body {
 
     /* Player Controls - Stack Layout */
     .player-controls {
-        padding: var(--spacing-sm) var(--spacing-md);
-        gap: var(--spacing-sm);
+        padding: var(--spacing-xs) var(--spacing-sm);
+        gap: var(--spacing-xs);
     }
 
     .primary-controls {
-        gap: var(--spacing-md);
+        gap: var(--spacing-sm);
     }
 
     .control-btn svg {
-        width: 20px;
-        height: 20px;
+        width: 18px;
+        height: 18px;
     }
 
     .control-btn-main {
-        width: 44px;
-        height: 44px;
+        width: 40px;
+        height: 40px;
     }
 
     .control-btn-main svg {
-        width: 24px;
-        height: 24px;
+        width: 22px;
+        height: 22px;
     }
 
     .secondary-controls {
-        gap: var(--spacing-md);
+        gap: var(--spacing-sm);
     }
 
     .volume-slider {
         width: 80px;
     }
 
+    /* Compact Now Playing section */
+    .now-playing-info .track-title {
+        font-size: 14px;
+    }
+
+    .now-playing-info .track-artist {
+        font-size: 12px;
+    }
+
     /* Ensure touch-friendly sizes */
     .control-btn {
-        min-width: 44px;
-        min-height: 44px;
+        min-width: 40px;
+        min-height: 40px;
+    }
+
+    .control-btn-main {
+        min-width: 44px !important;
+        min-height: 44px !important;
     }
 }
 
@@ -678,6 +692,93 @@ body {
     .secondary-controls {
         flex-wrap: wrap;
         justify-content: center;
+    }
+}
+
+/* Mobile Landscape (≤900px width AND ≤500px height) */
+@media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
+    :root {
+        --player-height: 120px;
+    }
+
+    .main-content {
+        margin-bottom: 130px;
+    }
+
+    .player-controls {
+        padding: var(--spacing-xs);
+        gap: 0;
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: auto auto;
+        align-items: center;
+    }
+
+    /* Now Playing - Left side */
+    .now-playing {
+        grid-column: 1;
+        grid-row: 1;
+        padding-right: var(--spacing-sm);
+    }
+
+    .now-playing-info .track-title {
+        font-size: 13px;
+    }
+
+    .now-playing-info .track-artist {
+        font-size: 11px;
+    }
+
+    /* Primary Controls - Center top */
+    .primary-controls {
+        grid-column: 2;
+        grid-row: 1;
+        gap: var(--spacing-xs);
+    }
+
+    .control-btn {
+        min-width: 36px;
+        min-height: 36px;
+    }
+
+    .control-btn svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .control-btn-main {
+        width: 36px !important;
+        height: 36px !important;
+        min-width: 36px !important;
+        min-height: 36px !important;
+    }
+
+    .control-btn-main svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* Secondary Controls - Right side */
+    .secondary-controls {
+        grid-column: 3;
+        grid-row: 1;
+        gap: var(--spacing-xs);
+        padding-left: var(--spacing-sm);
+    }
+
+    .volume-slider {
+        width: 60px;
+    }
+
+    /* Progress Bar - Full width bottom */
+    .progress-section {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        padding-top: var(--spacing-xs);
+    }
+
+    .time-display {
+        font-size: 11px;
     }
 }
 
