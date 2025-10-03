@@ -24,7 +24,7 @@ The purpose of this system is to build a lightweight web application that allows
 
 ## 5. Functional Requirements
 ### 5.1 Music Playback Features
-- Display a list of available tracks  
+- Display a list of Desmond’s Playlist  
 - Continuous playback (automatically move to the next track)  
 - Shuffle playback (random play)  
 - Single-track repeat function  
